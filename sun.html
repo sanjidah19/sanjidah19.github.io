@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<head>
+<script src="/assets/jquery.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Londrina+Shadow' rel='stylesheet' type='text/css'>
+<style>
+
+body {
+  font-family: "Brush Script MT";
+  margin: 0 auto;
+  max-width: 600px;
+  background: #738;
+  color: gold;
+}
+
+div {
+  height: 400px;
+  background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+}
+
+h1 {
+  font-family: "Brush Script MT";
+  text-align: center;
+  font-size: 90px;
+  color: ##464a51;
+  margin: 60px 0 0 0;
+}
+
+h2 {
+  text-align: center;
+  color: #bbbbbb;
+  margin: 0px 0 70px 0;
+}
+
+p {
+  color: rgba(255,25,123,1);
+  background: blue;
+  background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -webkit-linear-gradient(bottom, rgba(5,8,87,1), rgba(0,0,0,.4));
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  padding: 5px;
+  line-height: 10px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+}
+
+small {
+  opacity: 0; 
+}
+
+ul {
+  padding: 10px;
+  background: rgba(738,84,98,8.5);
+  text-align: center;
+}
+li {
+  display: inline;
+  padding: 0px 10px 0px 10px;
+}
+
+.show-description p {
+  height: 150px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+
+.price {
+  float: right;
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  } 
+  div {
+    margin: 20px 12px 0px 12px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  small {
+    font-size: 16px;
+  }
+}
+</style>
+
+</head>
+
+<body>
+<ul>
+      <li><button onclick= appetizer()>APPETIZER</button></li>
+      <li><button onclick= entree()>ENTREE</button></li>
+      <li><button onclick= dessert()>DESSERT</button></li>
+    </ul>
+<h1>San with the Goods</h1>
+<h2>A New York City Eatery</h2>
+
+<div id="pop">
+
+</div>
+
+<script> 
+AppetizerImages = [
+  'url("https://www.eatwell101.com/wp-content/uploads/2017/10/shrimp-appetizer-recipe-2.jpg")',
+  'url("http://glebekitchen.com/wp-content/uploads/2016/12/chickentikkakebab.jpg")',
+  'url("https://cdn-image.myrecipes.com/sites/default/files/styles/medium_2x/public/fingerling-potatoes-avocado-smoked-salmon-sl.jpg?itok=GWQr7Sk4")',
+]
+
+EntreeImages = [
+  'url("https://media.bizj.us/view/img/9370852/palm-surf-and-turf*750xx5436-3058-0-511.jpg")',
+  'url("https://www.sterlingballroomevents.com/wp-content/uploads/2017/11/2015-Catering-Menu_Entree_Filet-Mignon-with-Shrimp_1_preview.jpeg")',
+  'url("https://d3h1lg3ksw6i6b.cloudfront.net/media/image/2017/10/16/5b9bd382be6b4db289762a07d393bd33_rendered.jpg")',
+]
+
+DessertImages = [
+  'url("https://static1.squarespace.com/static/5966f7b620099e91326e978a/t/599de5fbe9bfdf50088b229e/1503520408777/Photo+Aug+15%2C+11+26+28+AM.jpg")',
+  'url("https://i2.wp.com/sueannetravels.com/wp-content/uploads/2017/05/Tokyo-Pastry_Easy-Resize.com_.jpg")',
+  'url("https://i.ndtvimg.com/i/2017-09/tiramisu-the-pick-me-up-cake_625x350_81506418133.jpg")',
+]
+
+function appetizer() {
+  moo = document.getElementById("pop")
+  moo.innerHTML = ''
+	moo.innerHTML += AppetizerDivs[0]
+  moo.innerHTML += AppetizerDivs[1]
+  moo.innerHTML += AppetizerDivs[2]
+
+  //alert("you are now on the appetizer page!")
+  items = document.getElementsByClassName("item")
+  for (i=0; i<3; i=i+1) {
+	  items[i].style.background = AppetizerImages[i]
+    items[i].style.backgroundSize = '100% 100%'
+  }
+}
+
+function entree () {
+  moo = document.getElementById("pop")
+  moo.innerHTML = ''
+	moo.innerHTML += EntreeDivs[0]
+  moo.innerHTML += EntreeDivs[1]
+  moo.innerHTML += EntreeDivs[2]
+  
+  //alert("you are now on the appetizer page!")
+  items = document.getElementsByClassName("item")
+  for (i=0; i<3; i=i+1) {
+		items[i].style.background = EntreeImages[i]
+		items[i].style.backgroundSize = '100% 100%'
+  }
+}
+
+function dessert () {
+  moo = document.getElementById("pop")
+  moo.innerHTML = ''
+	moo.innerHTML += DessertDivs[0]
+  moo.innerHTML += DessertDivs[1]
+  moo.innerHTML += DessertDivs[2]
+  
+  //alert("you are now on the appetizer page!")
+  items = document.getElementsByClassName("item")
+  for (i=0; i<3; i=i+1) {
+		items[i].style.background = DessertImages[i]
+    items[i].style.backgroundSize = '100% 100%'
+  }
+}
+
+
+AppetizerDivs = [
+  '<div class="item" onclick=this.classList.toggle("show-description")><p>Shrimp Cocktail<span class="price">$14</span><br /><small>A little appetizer with shrimp and sauce and lime to eat. Definitely a great food to eat at anytime!</small></p></div>',
+  '<div class="item" onclick=this.classList.toggle("show-description")><p>Chicken Kebab on A Stick<span class="price">$22</span><br /><small>Chicken Tikka crispy and tender and juicy for you to eat on a stick! Definitely a great food to eat at anytime!</small></p></div>',
+  '<div class="item" onclick=this.classList.toggle("show-description")><p>Smoked Salmon<span class="price">$8</span><br /><small>Fingerling potatoes with avocado and smoked salmon. Definitely a great food to eat at anytime!</small></p></div>',
+]
+
+EntreeDivs = [
+  '<div class="item" onclick=this.classList.toggle("show-description")><p>Seafood<span class="price">$14</span><br /><small>It contains lobster along with lobster claw and juicy sauce to eat with. Definitely a great food to eat at anytime!</small></p></div>',
+  '<div class="item" onclick=this.classList.toggle("show-description")><p>Steak<span class="price">$22</span><br /><small>A steak is a meat generally sliced across the muscle fibers, potentially including a bone. Definitely a great food to eat at anytime!</small></p></div>',
+  '<div class="item" onclick=this.classList.toggle("show-description")><p>Indian Food<span class="price">$8</span><br /><small>A variety of Indian Food ranging from rice with daal, chicken curry, butter chicken and more! Definitely a great food to eat at anytime!</small></p></div>',
+]
+
+DessertDivs = [
+  '<div class="item"><p>Macarons<span class="price">$14</span><br /><small>It has creme filling in the inside and a beautifully soft cookie on the outside. Made of many different flavors and sizes. You can choose what you desire.</small></p></div>',
+  '<div class="item"><p>Crepe Cake<span class="price">$22</span><br /><small>It has multiple thin layers using pankcake batter and multiple different flavors and sizes made into a slice of cake. Delicately made and the taste is just as great. Soft and tasty, having you crave for more!</small></p></div>',
+  '<div class="item"><p>Tiramisu <span class="price">$8</span><br /><small>A Japanese dessert using lady fingers, creme, chocolate powder and other ingrediants lactose intolerant people usually would not eat. Definitely a great dessert to eat at anytime!</small></p></div>',
+]
+
+
+
+</script>
+
+</body>
